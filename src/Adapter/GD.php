@@ -570,9 +570,9 @@ class GD implements Canvas
         imagesetthickness($this->get_image(), isset($width) ? $width : 0);
 
         if ($fill) {
-            imagefilledpolygon($this->get_image(), $points, $c);
+            imagefilledpolygon($this->get_image(), $points, count($points) / 2, $c);
         } else {
-            imagepolygon($this->get_image(), $points, $c);
+            imagepolygon($this->get_image(), $points, count($points) / 2, $c);
         }
     }
 
